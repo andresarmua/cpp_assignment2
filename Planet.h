@@ -1,9 +1,3 @@
-/*0. 
-
-Create a class Planet that has the data members of name (type string), mass and distance (type double). Create this in its own separate files (.cc and .h) and define member setter and getter functions for each of the data members.
-
-*/
-
 
 #include <string>
 
@@ -42,3 +36,6 @@ class Planet {
 
 
 #endif
+
+
+
