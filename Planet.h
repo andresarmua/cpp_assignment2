@@ -12,12 +12,14 @@ class Planet {
 	
 	Planet();
 	Planet(string name, double mass, double x, double y, double vy, double vx);
+    ~Planet();
     void set_name(string name);
     void set_mass(double mass);
 	void set_x(double x);
 	void set_y(double x);
 	void set_vx(double x);
 	void set_vy(double x);
+    static int totalPlanets();
 
       
     string get_name();
@@ -27,7 +29,7 @@ class Planet {
     double get_vx(); 
     double get_vy(); 
    
-   
+    void Evolve(double dt, double ax, double ay);   
    
 
 
@@ -39,6 +41,7 @@ class Planet {
     double m_y;
     double m_vx;
     double m_vy;
+    static int m_counter;
 
 
 };  // is this ';' necessary?

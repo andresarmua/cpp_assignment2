@@ -3,6 +3,14 @@
 
 using namespace std;
 
+
+
+
+int Planet::m_counter = 0;
+
+
+
+
 Planet::Planet() {
 
   m_name      = "NULL";
@@ -12,6 +20,7 @@ Planet::Planet() {
   m_vx        = 0;
   m_vy        = 0;
 
+  m_counter++;
 }
 
 
@@ -26,7 +35,15 @@ Planet::Planet(string name, double mass, double x, double y, double vx, double v
   m_vx        = vx;
   m_vy        = vy;
 
-//}
+  m_counter++;
+}
+
+
+Planet::~Planet(){
+  m_counter--;
+
+}
+
 
 
 string Planet::get_name() {
@@ -54,6 +71,7 @@ double Planet::get_vy() {
 }
 
 
+
 void Planet::set_name(string name) {
   m_name = name;
 }
@@ -76,4 +94,19 @@ void Planet::set_vx(double vx) {
 
 void Planet::set_vy(double vy) {
   m_vy = vy;
+}
+
+
+
+void Planet::Evolve(double dt, double ax, double ay) {
+  m_x   = m_x   + m_vx*dt + (1/2)*ax*dt*dt;
+  m_vx  = m_vx  + ax*dt;
+  m_y   = m_y   + m_vy*dt + (1/2)*ay*dt*dt;
+  m_vy  = m_vy  + ay*dt;
+}
+
+
+
+int Planet::totalPlanets(){
+  return m_counter;
 }
