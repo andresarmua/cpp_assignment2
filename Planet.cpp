@@ -11,7 +11,7 @@ int Planet::m_counter = 0;
 
 
 
-Planet::Planet() {
+Planet::Planet() {       //Creates a massless planet with name "Null" placed at origin with 0 velocity
 
   m_name      = "NULL";
   m_mass      = 0;
@@ -26,7 +26,7 @@ Planet::Planet() {
 
 
 
-Planet::Planet(string name, double mass, double x, double y, double vx, double vy) {
+Planet::Planet(string name, double mass, double x, double y, double vx, double vy) { //Creates planet with parameters given in the input
 
   m_name      = name;
   m_mass      = mass;
@@ -39,14 +39,14 @@ Planet::Planet(string name, double mass, double x, double y, double vx, double v
 }
 
 
-Planet::~Planet(){
+Planet::~Planet(){      //To avoid overcounting the Planets created
   m_counter--;
 
 }
 
 
 
-string Planet::get_name() {
+string Planet::get_name() {   //Get functions
   return m_name;
 }
 
@@ -72,7 +72,7 @@ double Planet::get_vy() {
 
 
 
-void Planet::set_name(string name) {
+void Planet::set_name(string name) { //Set functions
   m_name = name;
 }
 
@@ -98,7 +98,7 @@ void Planet::set_vy(double vy) {
 
 
 
-void Planet::Evolve(double dt, double ax, double ay) {
+void Planet::Evolve(double dt, double ax, double ay) { //Evolves planet given the steptime dt and the acceleration ax,ay
   m_x   = m_x   + m_vx*dt + (1/2)*ax*dt*dt;
   m_vx  = m_vx  + ax*dt;
   m_y   = m_y   + m_vy*dt + (1/2)*ay*dt*dt;
@@ -107,6 +107,6 @@ void Planet::Evolve(double dt, double ax, double ay) {
 
 
 
-int Planet::totalPlanets(){
+int Planet::totalPlanets(){   //returns number of planets created
   return m_counter;
 }

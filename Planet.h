@@ -10,18 +10,24 @@ class Planet {
 	
 	public:
 	
-	Planet();
-	Planet(string name, double mass, double x, double y, double vy, double vx);
+	//Planet constructors
+
+    Planet();        	
+    Planet(string name, double mass, double x, double y, double vy, double vx);
     ~Planet();
+    //Set Functions
+
     void set_name(string name);
     void set_mass(double mass);
 	void set_x(double x);
 	void set_y(double x);
 	void set_vx(double x);
 	void set_vy(double x);
+
+    //Returns number of planets created
     static int totalPlanets();
 
-      
+    //Get Functions 
     string get_name();
     double get_mass();
     double get_x(); 
@@ -35,13 +41,13 @@ class Planet {
 
 	private:
 	
-	string m_name;
-	double m_mass;
-    double m_x;
-    double m_y;
-    double m_vx;
-    double m_vy;
-    static int m_counter;
+	string m_name;          // Planet name
+	double m_mass;          // Planet mass
+    double m_x;             // Planet x coordinate
+    double m_y;             // Planet y coordinate
+    double m_vx;            // Planet x velocity
+    double m_vy;            // Planet y velocity
+    static int m_counter;   // Planet counter
 
 
 };  // is this ';' necessary?

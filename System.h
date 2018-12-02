@@ -5,10 +5,10 @@
 
 class System{
   public:
-  System();
-  System(vector<Planet> P);  
-  void Evolve(double dt);
-  vector<Planet> get_Planets();
+  System();                       //Creates system with unnamed planet at the origin
+  System(vector<Planet> P);       //Creates system with different planets from Planet vector input
+  void Evolve(double dt);         //Evolves the system in time (using a given timestep dt)
+  vector<Planet> get_Planets();   //Returns vector containing planet states
 
 
 
@@ -17,11 +17,5 @@ class System{
   private:
   vector<Planet> m_P;
 };
-
-
-
-
-
-
 
 #endif
